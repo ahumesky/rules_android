@@ -29,9 +29,9 @@ jobs:
         run: sudo apt install pandoc
       - name: Build Stardoc with Bazel
         run: |
-          bazel build //rules/stardoc:stardoc.md --workspace_status_command='echo STABLE_GIT_COMMIT $(git rev-parse HEAD)'
+          bazel build //stardoc:stardoc.md --workspace_status_command='echo STABLE_GIT_COMMIT $(git rev-parse HEAD)'
           mkdir -p _site
-          pandoc bazel-bin/rules/stardoc/stardoc.md -o _site/index.html
+          pandoc bazel-bin/stardoc/stardoc.md -o _site/index.html
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
 
