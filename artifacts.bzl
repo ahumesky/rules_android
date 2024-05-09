@@ -1,0 +1,1 @@
+artifacts = ["a", "b", "c"]
